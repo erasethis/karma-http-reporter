@@ -1,7 +1,7 @@
 {
-  "name": "karma-http-reporter",
+  "name": "karma-instant-reporter",
   "version": "1.0.0",
-  "description": "HTTP server for instant-karma",
+  "description": "Karma plugin for Instant Karma",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
