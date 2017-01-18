@@ -43,80 +43,80 @@ var InstantReporter = function (baseReporterDecorator, config, logger, helper, f
     this.onRunStart = function (browsers) {
         broadcast({
             type: 'run-start',
-            browsers: JSON.stringify(browsers)
+            browsers
         });
     }
 
     this.onBrowserStart = function (browser, info) {
         broadcast({
             type: 'browser-start',
-            browser: JSON.stringify(browser),
-            info: JSON.stringify(info)
+            browser,
+            info
         });
     }
 
     this.specSuccess = function (browser, result) {
-        broadcast({
+        broadcast(({
             type: 'spec-success',
-            browser: JSON.stringify(browser),
-            result: JSON.stringify(result)
-        });
+            browser,
+            result
+        }));
     }
 
     this.specFailure = function (browser, result) {
-        broadcast({
+        broadcast(({
             type: 'spec-fail',
-            browser: JSON.stringify(browser),
-            result: JSON.stringify(result)
-        });
+            browser,
+            result
+        }));
     }
 
     this.specSkipped = function (browser, result) {
-        broadcast({
+        broadcast(({
             type: 'spec-skipped',
-            browser: JSON.stringify(browser),
-            result: JSON.stringify(result)
-        });
+            browser,
+            result
+        }));
     }
 
     this.onSpecComplete = function (browser, result) {
-        broadcast({
+        broadcast(({
             type: 'spec-complete',
-            browser: JSON.stringify(browser),
-            result: JSON.stringify(result)
-        });
+            browser,
+            result
+        }));
     }
 
     this.onBrowserComplete = function (browser) {
-        broadcast({
+        broadcast(({
             type: 'spec-complete',
-            browser: JSON.stringify(browser)
-        });
+            browser
+        }));
     }
 
     this.onBrowserError = function (browser, error) {
-        broadcast({
+        broadcast(({
             type: 'spec-complete',
-            browser: JSON.stringify(browser),
-            error: JSON.stringify(error)
-        });
+            browser,
+            error
+        }));
     }
 
     this.onBrowserLog = function (browser, log, type) {
-        broadcast({
+        broadcast(({
             type: 'spec-complete',
-            browser: JSON.stringify(browser),
-            log: JSON.stringify(log),
-            type: JSON.stringify(type)
-        });
+            browser,
+            log,
+            type
+        }));
     }
 
     this.onRunComplete = function (browsers, results) {
-        broadcast({
+        broadcast(({
             type: 'run-complete',
-            browsers: JSON.stringify(browsers),
-            results: JSON.stringify(results)
-        });
+            browsers,
+            results
+        }));
     }
 };
 
