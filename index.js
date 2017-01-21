@@ -80,6 +80,7 @@ var InstantReporter = function (baseReporterDecorator, config, logger, helper, f
     }
 
     this.onSpecComplete = function (browser, result) {
+        console.log(result)
         broadcast(({
             type: 'spec-complete',
             browser,
@@ -89,14 +90,14 @@ var InstantReporter = function (baseReporterDecorator, config, logger, helper, f
 
     this.onBrowserComplete = function (browser) {
         broadcast(({
-            type: 'spec-complete',
+            type: 'browser-complete',
             browser
         }));
     }
 
     this.onBrowserError = function (browser, error) {
         broadcast(({
-            type: 'spec-complete',
+            type: 'browser-error',
             browser,
             error
         }));
@@ -104,7 +105,7 @@ var InstantReporter = function (baseReporterDecorator, config, logger, helper, f
 
     this.onBrowserLog = function (browser, log, type) {
         broadcast(({
-            type: 'spec-complete',
+            type: 'browser-log',
             browser,
             log,
             type
